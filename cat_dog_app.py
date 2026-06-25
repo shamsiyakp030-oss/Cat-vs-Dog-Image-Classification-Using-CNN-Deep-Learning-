@@ -135,6 +135,8 @@ def load_cnn():
     st.write("Model exists:", os.path.exists(model_path))
 
     return load_model(model_path)
+    score = model.predict(img_array)
+    
 # ---------------------------------------------------
 # HEADER
 # ---------------------------------------------------
