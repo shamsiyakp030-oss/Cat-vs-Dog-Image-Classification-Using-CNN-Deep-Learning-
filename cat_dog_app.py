@@ -125,10 +125,16 @@ st.markdown("""
 # ---------------------------------------------------
 @st.cache_resource
 def load_cnn():
-    return load_model("cat_dog_cnn.h5")
+    import os
 
-model = load_cnn()
+    st.write("Current Directory:", os.getcwd())
+    st.write("Files:", os.listdir())
 
+    model_path = "cat_dog_model.keras"
+
+    st.write("Model exists:", os.path.exists(model_path))
+
+    return load_model(model_path)
 # ---------------------------------------------------
 # HEADER
 # ---------------------------------------------------
