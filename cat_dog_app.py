@@ -123,19 +123,14 @@ st.markdown("""
 # ---------------------------------------------------
 # LOAD MODEL
 # ---------------------------------------------------
+from tensorflow.keras.models import load_model
+import streamlit as st
+
 @st.cache_resource
 def load_cnn():
-    import os
+    return load_model("cat_dog_model.keras")
 
-    st.write("Current Directory:", os.getcwd())
-    st.write("Files:", os.listdir())
-
-    model_path = "cat_dog_model.keras"
-
-    st.write("Model exists:", os.path.exists(model_path))
-
-    return load_model(model_path)
-    score = model.predict(img_array)
+model = load_cnn()
     
 # ---------------------------------------------------
 # HEADER
